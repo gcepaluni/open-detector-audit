@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "open-detector-audit"
+version = "0.1.0"
+description = "Test AI-text detectors on your own human writers, in their languages, before trusting them."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Gabriel Cepaluni" }]
+dependencies = []
+
+[project.optional-dependencies]
+mt = ["transformers>=4.40", "torch", "sentencepiece"]
+dev = ["pytest"]
+
+[project.scripts]
+oda = "oda.cli:main"
+
+[tool.setuptools]
+packages = ["oda"]
